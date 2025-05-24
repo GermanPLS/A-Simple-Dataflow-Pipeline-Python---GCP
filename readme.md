@@ -52,7 +52,7 @@ En la terminal SSH de la máquina virtual de entrenamiento, ejecuta el siguiente
     
     git clone https://github.com/GoogleCloudPlatform/training-data-analyst
     
-
+![alt text](imagenes/2.1.png)
 
 ### - Crear un bucket de almacenamiento en Cloud Storage.
 
@@ -78,7 +78,7 @@ Siga estas instrucciones para crear un depósito.
 
 - Haga clic en  **Create bucket**.
 
-- Especifique lo siguiente: `Nombre y Region` ,  y deje las configuraciones restantes como predeterminadas:
+- Especifique lo siguiente: `Nombre y Region`  (segun lo que indica el Lab),  y deje las configuraciones restantes como predeterminadas:
 
 
 
@@ -86,6 +86,7 @@ Siga estas instrucciones para crear un depósito.
 
 - haga clic en **Confirmar** .
 
+![alt text](imagenes/3.1.png)
 
 - Desde la terminal SSH de tu VM, `training-vm` ,puedes crear una variable de entorno para referenciar tu bucket fácilmentey verificar que creo correctamente con el comando `echo`:
 
@@ -109,6 +110,8 @@ En esta etapa del laboratorio, aprenderás a ejecutar una canalización (pipelin
     ```
     cd ~/training-data-analyst/courses/data_analysis/lab2/python
     ```
+    ![alt text](imagenes/4.png)
+    
 - Visualiza el archivo con Nano. 
     ```
     nano grep.py
@@ -183,6 +186,7 @@ El archivo de salida será output.txt. Si el tamaño de salida es suficiente, se
     ```
     ls -al /tmp
     ```
+    ![alt text](imagenes/6.png)
 - Examine los archivos de salida.
 
 - Puede reemplazar "-*" a continuación con el sufijo apropiado:
@@ -190,7 +194,8 @@ El archivo de salida será output.txt. Si el tamaño de salida es suficiente, se
     ```
     cat /tmp/output-*
     ```
-
+    ![alt text](imagenes/6.1.png)
+  
 ¿El resultado parece lógico?
 
 ## Tarea 5. Ejecutar el pipeline en la nube
@@ -206,12 +211,17 @@ El archivo de salida será output.txt. Si el tamaño de salida es suficiente, se
     gcloud storage cp ../javahelp/src/main/java/com/google/cloud/training/dataanalyst/javahelp/*.java gs://$BUCKET/javahelp
 
     ```
+
+    ![alt text](imagenes/6.2.png)
+  
 - Usando `nano`, edite la canalización de flujo de datos en `grepc.py`:
 
     ```sh
     # Editamos el archivo grey.py 
     nano grepc.py
     ```
+    ![alt text](imagenes/6.3.png)
+  
 - Reemplace PROJECT, BUCKET y REGION con los valores que se indican a continuación. Conserve las comillas simples exteriores.
 
     ```sh
